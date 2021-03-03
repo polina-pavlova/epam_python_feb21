@@ -1,6 +1,6 @@
 import pytest
 
-from homework1.task03 import find_maximum_and_minimum
+from homework1.tasks.task03 import find_maximum_and_minimum
 
 
 @pytest.mark.parametrize(
