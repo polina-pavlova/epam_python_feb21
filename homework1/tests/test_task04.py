@@ -16,6 +16,7 @@ from homework1.tasks.task04 import check_sum_of_four
             3,
         ),
         ([0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], 4),
+        ([-1, -1], [0, 0], [0, 0], [1, 1], 2),
     ],
 )
 def test_check_sum_of_four(

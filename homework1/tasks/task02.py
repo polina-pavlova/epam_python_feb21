@@ -10,15 +10,11 @@ We guarantee, that the given sequence contain >= 0 integers inside.
 from typing import List
 
 
-def check_fib_window(a: int, b: int, c: int) -> bool:
-    if all(map(lambda number: number >= 0, [a, b, c])):
-        return a + b == c
-
-
 def check_fibonacci(data: List[int]) -> bool:
-    assert len(data) >= 3
-    while len(data) >= 3:
-        if not check_fib_window(data[0], data[1], data[2]):
-            return False
-        data = data[1:]
-    return True
+    if len(data) < 3 or any(map(lambda number: number < 0, data)):
+        return False
+    else:
+        for i in range(2, len(data)):
+            if not data[i] == data[i - 1] + data[i - 2]:
+                return False
+        return True
