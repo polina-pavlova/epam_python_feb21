@@ -13,8 +13,7 @@ from typing import List
 def check_fibonacci(data: List[int]) -> bool:
     if len(data) < 3 or any(map(lambda number: number < 0, data)):
         return False
-    else:
-        for i in range(2, len(data)):
-            if not data[i] == data[i - 1] + data[i - 2]:
-                return False
-        return True
+    for i in range(2, len(data)):
+        if not data[i] == data[i - 1] + data[i - 2]:
+            return False
+    return True
