@@ -11,10 +11,10 @@ from typing import List
 
 def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) -> int:
     counter = 0
-    for i in range(len(a)):
-        for j in range(len(b)):
-            for k in range(len(c)):
-                for l in range(len(d)):
-                    if not a[i] + b[j] + c[k] + d[l]:
+    for element_a in a:
+        for element_b in b:
+            for element_c in c:
+                for element_d in d:
+                    if not element_a + element_b + element_c + element_d:
                         counter += 1
     return counter
