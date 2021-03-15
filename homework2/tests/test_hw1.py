@@ -24,20 +24,15 @@ def test_get_rarest_char():
 
 def test_count_punctuation_chars():
     assert count_punctuation_chars("tests/data.txt") == {
-        ",": 2489,
-        ":": 79,
-        ".": 1615,
-        "!": 0,
-        "»": 43,
-        "«": 43,
-        "—": 81,
-        "?": 28,
-        ";": 73,
-        "›": 1,
-        "‹": 1,
         "'": 3,
         "(": 1,
         ")": 1,
+        ",": 2489,
+        "-": 1016,
+        ".": 1615,
+        ":": 79,
+        ";": 73,
+        "?": 28,
     }
 
 

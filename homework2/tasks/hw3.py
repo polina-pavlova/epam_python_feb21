@@ -19,6 +19,4 @@ from typing import Any, List
 
 
 def combinations(*args: List[Any]) -> List[List]:
-    combs = product(*args)
-    list_of_combinations = [list(i) for i in combs]
-    return list_of_combinations
+    return [list(i) for i in product(*args)]
