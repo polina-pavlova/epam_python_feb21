@@ -5,21 +5,36 @@ import pytest
 from homework2.tasks.hw5 import custom_range
 
 
-@pytest.mark.parametrize(
-    ["iterable", "start", "stop", "step", "expected_result"],
-    [
-        (string.ascii_lowercase, "p", "g", -2, ["p", "n", "l", "j", "h"]),
-        (string.ascii_lowercase, "a", "g", 1, ["a", "b", "c", "d", "e", "f"]),
-        (
-            string.ascii_lowercase,
-            "g",
-            "p",
-            1,
-            ["g", "h", "i", "j", "k", "l", "m", "n", "o"],
-        ),
-    ],
-)
-def test_custom_range(iterable, start, stop, step, expected_result):
-    actual_result = custom_range(iterable, start, stop, step)
+def test_custom_range_with_one_arg():
+    assert custom_range(string.ascii_lowercase, end="g") == [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+    ]
 
-    assert actual_result == expected_result
+
+def test_custom_range_with_two_args():
+    assert custom_range(string.ascii_lowercase, "g", "p") == [
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+    ]
+
+
+def test_custom_range_with_three_args():
+    assert custom_range(string.ascii_lowercase, "p", "g", -2) == [
+        "p",
+        "n",
+        "l",
+        "j",
+        "h",
+    ]

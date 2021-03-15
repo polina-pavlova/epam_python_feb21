@@ -24,6 +24,5 @@ def major_and_minor_elem(inp: List) -> Tuple[int, int]:
     elements = dict.fromkeys(set(inp), 0)
     for i in inp:
         elements[i] += 1
-    most_common = sorted(elements, key=elements.get, reverse=True)[0]
-    least_common = sorted(elements, key=elements.get, reverse=True)[-1]
-    return most_common, least_common
+    sorted_elements = sorted(elements, key=elements.get, reverse=True)
+    return sorted_elements[0], sorted_elements[-1]

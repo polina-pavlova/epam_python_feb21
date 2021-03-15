@@ -24,7 +24,7 @@ from typing import Callable
 def cache(func: Callable) -> Callable:
     cached_results = {}
 
-    def func_cache(*args):
+    def func_cache(*args, **kwargs):
         if args in cached_results:
             return cached_results[args]
         cached_results[args] = func(*args)

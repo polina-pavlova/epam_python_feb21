@@ -14,31 +14,12 @@ assert = custom_range(string.ascii_lowercase, 'g', 'p') == ['g', 'h', 'i', 'j', 
 assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', 'j', 'h']
 
 """
+from typing import List
 
 
-def custom_range(iterable, *args):
-    current = iterable[0]
-    step = 1
-    if len(args) == 1:
-        stop = args[0]
-    elif len(args) == 2:
-        current = args[0]
-        stop = args[1]
-    else:
-        current = args[0]
-        stop = args[1]
-        step = args[2]
-
-    result_list = []
-
-    if iterable.index(current) < iterable.index(stop):
-        while iterable.index(current) < iterable.index(stop):
-            result_list.append(current)
-            current = iterable[iterable.index(current) + step]
-
-    else:
-        while iterable.index(current) > iterable.index(stop):
-            result_list.append(current)
-            current = iterable[iterable.index(current) + step]
-
-    return result_list
+def custom_range(iterable, start=None, end=None, step=1) -> List:
+    if not start:
+        start = iterable[0]
+    start_index = iterable.index(start)
+    end_index = iterable.index(end)
+    return list(iterable[start_index:end_index:step])
