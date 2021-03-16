@@ -25,15 +25,17 @@ def cache(func: Callable) -> Callable:
     cached_results = {}
 
     def func_cache(*args, **kwargs):
+        nonlocal cached_results
         if args:
             if args in cached_results:
                 return cached_results[args]
             cached_results[args] = func(*args)
             return cached_results[args]
         if kwargs:
-            if kwargs in cached_results:
-                return cached_results[kwargs]
-            cached_results[kwargs] = func(**kwargs)
-            return cached_results[kwargs]
+            kwargs_ = tuple(sorted(kwargs.items()))
+            if kwargs_ in cached_results:
+                return cached_results[kwargs_]
+            cached_results[kwargs_] = func(**kwargs)
+            return cached_results[kwargs_]
 
     return func_cache
