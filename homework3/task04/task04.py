@@ -26,7 +26,3 @@ def is_armstrong(number: int) -> bool:
         map(lambda x: int(x) ** len(str(number)), list(str(number)))
     )
     return reduce(lambda a, b: a + b, powers_of_digits) == number
-
-
-# assert is_armstrong(153) is True, 'Is Armstrong number'
-# assert is_armstrong(10) is False, 'Is not Armstrong number'

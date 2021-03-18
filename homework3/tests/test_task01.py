@@ -5,12 +5,18 @@ from mock import Mock
 
 from homework3.task01.task01 import cache
 
-
-def func_for_testing():
-    return 1
+mock_func = Mock()
 
 
 def test_in_cache():
-    with mock.patch("func_cache", autospec=True) as patched_cache:
-        cache(times=2)(func_for_testing)
-    patched_cache.assert_has_calls()
+    cached = cache(3)(mock_func)
+    cached(1, 2)
+    cached(1, 2)
+    assert mock_func.call_count == 1
+
+
+def test_not_in_cache():
+    cached = cache(3)(mock_func)
+    cached(1, 2)
+    cached(1)
+    assert mock_func.call_count == 3
