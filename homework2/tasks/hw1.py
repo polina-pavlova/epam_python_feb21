@@ -15,10 +15,12 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     words = {}
     with open(file_path, encoding="unicode-escape") as fi:
         for line in fi:
-            if line.endswith("-"):
-                line += next(line)
+            if line.endswith("-\n"):
+                line = line.strip("-\n") + fi.readline()
             words_in_line = line.split()
-            words_in_line = [word.strip(string.punctuation) for word in words_in_line]
+            words_in_line = [
+                word.strip(string.punctuation + "«»‹›") for word in words_in_line
+            ]
             for word in words_in_line:
                 words[word] = [len(word), len(set(word))]
     return [word for word in sorted(words, key=words.get, reverse=True)][:10]
@@ -34,7 +36,7 @@ def get_rarest_char(file_path: str):
 
 
 def count_punctuation_chars(file_path: str):
-    punctuation_chars = dict.fromkeys(string.punctuation, 0)
+    punctuation_chars = dict.fromkeys(string.punctuation + "«»‹›", 0)
     with open(file_path, encoding="unicode-escape") as fi:
         for char in list(fi.read()):
             if char in punctuation_chars:

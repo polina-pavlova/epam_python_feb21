@@ -7,14 +7,14 @@ def test_get_longest_diverse_words():
     assert get_longest_diverse_words("tests/data.txt") == [
         "politisch-strategischen",
         "Verfassungsverletzungen",
+        "Souveränitätsansprüche",
+        "Mehrheitsvorstellungen",
         "zoologisch-politischen",
         "Wiederbelebungsübungen",
         "Werkstättenlandschaft",
         "résistance-Bewegungen",
         "Entscheidungsschlacht",
         "politisch-technischen",
-        "Geschichtsphilosophie",
-        "Selbstbezichtigungen",
     ]
 
 
@@ -33,6 +33,10 @@ def test_count_punctuation_chars():
         ":": 79,
         ";": 73,
         "?": 28,
+        "«": 43,
+        "»": 43,
+        "‹": 1,
+        "›": 1,
     }
 
 
