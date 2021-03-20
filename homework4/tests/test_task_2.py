@@ -1,7 +1,6 @@
 from unittest import mock
 
 import pytest
-import requests
 import requests_mock
 
 from homework4.tasks.task_2_mock_input import count_dots_on_i
@@ -22,7 +21,9 @@ def test_i_is_not_on_page():
 
 
 def test_value_error():
-    with requests_mock.Mocker() as mock_url:
-        mock_url.get("http://test.com", text="water")
-        count_dots_on_i("http://test.com")
-        assert ValueError
+    def raise_value_error(url):
+        raise ValueError(f"Unreachable {url}")
+
+    with pytest.raises(ValueError):
+        with mock.patch("requests.get", raise_value_error):
+            count_dots_on_i("http://test_wrong.com")

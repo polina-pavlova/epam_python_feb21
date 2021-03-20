@@ -25,18 +25,18 @@ You will learn:
 
 * https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen
 """
-import re
-
 import requests
+import requests.exceptions as req_exc
 
 
 def count_dots_on_i(url: str) -> int:
     try:
         res = requests.get(url)
-        counter = 0
-        for line in res:
-            # line_without_tags = str(re.sub(r'\<[^>]*\>', '', str(line))) #удалить html теги. но в ответе в примере с учетом тегов
-            counter += str(line).count("i")
-        return counter
-    except ValueError:
-        print(f"Unreachable {url}")
+        return res.text.count("i")
+    except (
+        req_exc.RequestException,
+        req_exc.ConnectionError,
+        req_exc.Timeout,
+        req_exc.HTTPError,
+    ):
+        raise ValueError(f"Unreachable {url}")
