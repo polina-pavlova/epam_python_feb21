@@ -32,5 +32,4 @@ def read_magic_number(path: str) -> bool:
         first_line = fi.readline()
         if isinstance(first_line, float):
             raise ValueError("Expected number in the first line")
-        first_line = float(first_line)
-        return True if first_line >= 1 and first_line < 3 else False
+        return True if float(first_line) >= 1 and float(first_line) < 3 else False
