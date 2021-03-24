@@ -10,8 +10,9 @@ class Filter:
     def __init__(self, functions):
         self.functions = functions
 
-    def apply(self, data):
-        return [item for item in data if all(i(item) for i in self.functions)]
+    def func(*params):
+        def apply():
+            return [func(param) for param in params]
 
 
 def make_filter(**keywords):

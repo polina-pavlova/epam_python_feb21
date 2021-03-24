@@ -14,13 +14,12 @@ sample_data = [
 
 
 def test_non_empty_result_of_make_filter():
-    assert make_filter(name="polly", type="bird").apply(sample_data) == [
+    assert make_filter(name="polly", type="bird").func(sample_data) == [
         {"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"}
     ]
 
 
 def test_empty_result_of_make_filter():
     assert (
-        make_filter(name="polly", type="bird", last_name="test").apply(sample_data)
-        == []
+        make_filter(name="polly", type="bird", last_name="test").func(sample_data) == []
     )
