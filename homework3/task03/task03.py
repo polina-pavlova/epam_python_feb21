@@ -50,6 +50,7 @@ def make_filter(**keywords):
     filter_funcs.append(keyword_filter_func)
 
     return filter_funcs
+    # return Filter.func(filter_funcs)
 
 
 sample_data = [
@@ -62,4 +63,5 @@ sample_data = [
     {"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"},
 ]
 # print(make_filter(name='polly', type='bird').apply(sample_data))
-print(Filter.func(sample_data, make_filter(name="polly", type="bird")))
+# print(Filter.func(sample_data, make_filter(name="polly", type="bird")))
+# print(Filter.func(sample_data, make_filter(name='polly', type='bird')))
