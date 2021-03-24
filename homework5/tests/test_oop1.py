@@ -65,7 +65,7 @@ def test_is_active(create_objects):
 def test_doing_active_homework(create_objects):
     st = create_objects[1]
     second_homework = create_objects[3]
-    assert isinstance(st.do_homework(second_homework), oop1.Homework)
+    assert isinstance(st.do_homework(second_homework), oop1.HomeWork)
 
 
 def test_doing_inactive_hw(create_objects, capsys):

@@ -21,10 +21,9 @@ import functools
 
 def get_original_info(function):
     def inner(fun):
+        @functools.wraps(function)
         def wrapper(*args, **kwargs):
             wrapper.__original_func = function
-            wrapper.__name__ = function.__name__
-            wrapper.__doc__ = function.__doc__
             return fun(*args, **kwargs)
 
         return wrapper

@@ -38,9 +38,13 @@ PEP8 соблюдать строго.
 давать логичные подходящие имена.
 """
 import datetime
+from dataclasses import dataclass
 
 
-class Homework:
+@dataclass
+class HomeWork:
+    __slots__ = ["text", "deadline", "created"]
+
     def __init__(self, text, deadline):
         self.text = text
         self.deadline = datetime.timedelta(deadline)
@@ -51,24 +55,26 @@ class Homework:
         return (self.deadline + self.created) > datetime.datetime.now()
 
 
+@dataclass
 class Student:
-    def __init__(self, last_name, first_name):
-        self.first_name = first_name
-        self.last_name = last_name
+    __slots__ = ["first_name", "last_name"]
+    last_name: str
+    first_name: str
 
     @staticmethod
-    def do_homework(Homework):
-        return Homework if Homework.is_active else print("You are late")
+    def do_homework(HomeWork):
+        return HomeWork if HomeWork.is_active else print("You are late")
 
 
+@dataclass
 class Teacher:
-    def __init__(self, last_name, first_name):
-        self.first_name = first_name
-        self.last_name = last_name
+    __slots__ = ["first_name", "last_name"]
+    last_name: str
+    first_name: str
 
     @staticmethod
     def create_homework(text, deadline):
-        return Homework(text, deadline)
+        return HomeWork(text, deadline)
 
 
 if __name__ == "__main__":
