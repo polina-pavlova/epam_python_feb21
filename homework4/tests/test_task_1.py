@@ -25,4 +25,3 @@ def test_value_error():
     with pytest.raises(ValueError):
         with mock.patch("builtins.open", mock_open):
             read_magic_number(mock_open)
-        assert ValueError
