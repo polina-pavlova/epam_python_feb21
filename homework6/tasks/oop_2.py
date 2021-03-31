@@ -83,7 +83,7 @@ class HomeworkResult:
             raise TypeError("HomeWork object were expected")
 
 
-@dataclass
+@dataclass(frozen=True)
 class Human:
     __slots__ = ["first_name", "last_name"]
     last_name: str
