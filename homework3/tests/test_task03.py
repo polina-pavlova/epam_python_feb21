@@ -1,6 +1,6 @@
 import pytest
 
-import homework3.task03.task03 as filt
+from homework3.task03.task03 import make_filter
 
 sample_data = [
     {
@@ -14,21 +14,13 @@ sample_data = [
 
 
 def test_non_empty_result_of_make_filter():
-    # assert make_filter(name="polly", type="bird").func(sample_data) == [
-    #     {"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"}
-    # ]
-    assert filt.Filter.func(
-        sample_data, filt.make_filter(name="polly", type="bird")
-    ) == [{"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"}]
+    assert make_filter(name="polly", type="bird").apply(sample_data) == [
+        {"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"}
+    ]
 
 
 def test_empty_result_of_make_filter():
-    # assert (
-    #     make_filter(name="polly", type="bird", last_name="test").func(sample_data) == []
-    # )
     assert (
-        filt.Filter.func(
-            sample_data, filt.make_filter(name="polly", type="bird", last_name="test")
-        )
+        make_filter(name="polly", type="bird", last_name="test").apply(sample_data)
         == []
     )
