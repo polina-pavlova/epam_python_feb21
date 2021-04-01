@@ -21,7 +21,6 @@ def instances_counter(cls):
         return instance
 
     def get_created_instances(instance=None):
-        nonlocal _counter
         return _counter
 
     def reset_instances_counter(instance=None):
