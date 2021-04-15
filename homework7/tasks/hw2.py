@@ -18,8 +18,17 @@ Examples:
     Explanation: s becomes "c" while t becomes "b".
 
 """
-import re
+
+
+def string_processing(string):
+    processed_string = ""
+    for char in string:
+        if char == "#":
+            processed_string = processed_string[:-1]
+        else:
+            processed_string += char
+    return processed_string
 
 
 def backspace_compare(first: str, second: str):
-    return re.sub(r".{0,1}#", "", first) == re.sub(r".{0,1}#", "", second)
+    return string_processing(first) == string_processing(second)

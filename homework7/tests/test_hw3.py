@@ -18,6 +18,7 @@ from homework7.tasks.hw3 import tic_tac_toe_checker
             [["x", "-", "o"], ["-", "x", "o"], ["-", "x", "x"]],
             "x wins!",
         ),  # test main diag
+        ([["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]], "unfinished"),
     ],
 )
 def test_tic_tac_toe_checker(board, expected_result):

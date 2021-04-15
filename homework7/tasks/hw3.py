@@ -32,7 +32,7 @@ def check_unfinished(board):
 
 def check_rows(board):
     for row in board:
-        if len(set(row)) == 1:
+        if (len(set(row)) == 1) and ("-" not in row):
             return row.pop()
 
 
@@ -43,7 +43,7 @@ def check_cols(board):
 def check_diagonals(board):
     return (
         len(set(np.diagonal(board))) == 1 or len(set(np.fliplr(board).diagonal())) == 1
-    )
+    ) and board[1][1] != "-"
 
 
 def tic_tac_toe_checker(board: List[List]) -> str:
