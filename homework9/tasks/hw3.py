@@ -31,19 +31,8 @@ def count_tokens(file, tokenizer: Optional[Callable] = None):
 def universal_file_counter(
     dir_path: Path, file_extension: str, tokenizer: Optional[Callable] = None
 ) -> int:
-    files_list = [
-        f"{dir_path}/{file}"
-        for file in os.listdir(dir_path)
-        if file.endswith(f".{file_extension}")
-    ]
+    files_list = Path(dir_path).rglob(f"*.{file_extension}")
     counter = 0
     for file in files_list:
         counter += count_tokens(file, tokenizer)
     return counter
-
-
-print(
-    universal_file_counter(
-        "/home/polina/Education/epam_python/epam_python_feb21/homework9/tests", "txt"
-    )
-)
