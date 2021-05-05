@@ -1,0 +1,82 @@
+[
+{
+"code": "UA",
+"name": "Under Armour",
+"price": 1437.21,
+"P/E": -55.67,
+"growth": "99.92",
+"potential profit": 1045.99
+},
+{
+"code": "UAA",
+"name": "Under Armour",
+"price": 1721.8,
+"P/E": -64.5,
+"growth": "99.34",
+"potential profit": 1294.54
+},
+{
+"code": "HBI",
+"name": "Hanesbrands",
+"price": 1569.37,
+"P/E": 9.79,
+"growth": "98.05",
+"potential profit": 1015.96
+},
+{
+"code": "FBHS",
+"name": "Fortune Brands Home & Security",
+"price": 7868.61,
+"P/E": 20.15,
+"growth": "97.67",
+"potential profit": 4669.8
+},
+{
+"code": "CMA",
+"name": "Comerica",
+"price": 5290.04,
+"P/E": 16.69,
+"growth": "96.79",
+"potential profit": 3445.85
+},
+{
+"code": "MCHP",
+"name": "Microchip Technology",
+"price": 11713.93,
+"P/E": 12.32,
+"growth": "95.69",
+"potential profit": 6620.62
+},
+{
+"code": "HPQ",
+"name": "HP",
+"price": 2600.34,
+"P/E": 7.75,
+"growth": "95.58",
+"potential profit": 1592.64
+},
+{
+"code": "PFG",
+"name": "Principal Financial Group",
+"price": 4708.1,
+"P/E": 9.66,
+"growth": "95.49",
+"potential profit": 2656.66
+},
+{
+"code": "PHM",
+"name": "PulteGroup",
+"price": 4050.32,
+"P/E": 8.51,
+"growth": "95.48",
+"potential profit": 2365.31
+},
+{
+"code": "NWL",
+"name": "Newell Brands",
+"price": 1998.13,
+"P/E": 11.56,
+"growth": "94.64",
+"potential profit": 1229.96
+}
+]

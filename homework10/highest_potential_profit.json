@@ -1,0 +1,82 @@
+[
+{
+"code": "AMZN",
+"name": "Amazon",
+"price": 251248.8,
+"P/E": 79.54,
+"growth": "42.25",
+"potential profit": 97128.01
+},
+{
+"code": "GOOG",
+"name": "Alphabet C (ex Google",
+"price": 174147.86,
+"P/E": 30.01,
+"growth": "81.54",
+"potential profit": 82119.16
+},
+{
+"code": "GOOGL",
+"name": "Alphabet A (ex Google",
+"price": 173681.55,
+"P/E": 30.0,
+"growth": "81.05",
+"potential profit": 80730.76
+},
+{
+"code": "TSLA",
+"name": "Tesla",
+"price": 54852.73,
+"P/E": 299.31,
+"growth": "408.20",
+"potential profit": 57351.71
+},
+{
+"code": "CMG",
+"name": "Chipotle Mexican Grill",
+"price": 110192.8,
+"P/E": 129.05,
+"growth": "73.45",
+"potential profit": 54291.07
+},
+{
+"code": "MTD",
+"name": "Mettler-Toledo International",
+"price": 100255.48,
+"P/E": 43.78,
+"growth": "72.54",
+"potential profit": 50855.73
+},
+{
+"code": "AZO",
+"name": "AutoZone",
+"price": 110482.64,
+"P/E": 16.46,
+"growth": "36.19",
+"potential profit": 40729.94
+},
+{
+"code": "ALGN",
+"name": "Align Technology",
+"price": 46259.51,
+"P/E": 98.94,
+"growth": "224.20",
+"potential profit": 33625.74
+},
+{
+"code": "LRCX",
+"name": "Lam Research",
+"price": 47080.99,
+"P/E": 20.18,
+"growth": "135.94",
+"potential profit": 32987.48
+},
+{
+"code": "ISRG",
+"name": "Intuitive Surgical",
+"price": 65703.14,
+"P/E": 80.71,
+"growth": "74.05",
+"potential profit": 30170.13
+}
+]
