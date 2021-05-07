@@ -28,20 +28,14 @@ assert order_1.final_price() == 50
 order_2 = Order(100, elder_discount)
 assert order_1.final_price() == 10
 """
-from abc import ABC, abstractmethod
-
-
-class Strategy(ABC):
-    @abstractmethod
-    def final_price(self):
-        pass
 
 
 class Order:
-    def __init__(self, price, discount_program: Strategy):
+    def __init__(self, price, discount_program):
         self.price = price
         self.discount_program = discount_program
 
-    @property
     def final_price(self):
-        return self.discount_program.final_price(self)
+        if self.discount_program:
+            return self.discount_program(self)
+        return self.price
